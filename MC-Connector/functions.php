@@ -8,11 +8,7 @@ require('engine\libs\xpaw\MinecraftPing.php');
 	
 	try
 	{
-		$Query = new MinecraftPing( $query[0]["address"], $query[0]["port"] );
 		$res = $Query->Query();
-		$name = $query[0]["name"];
-		$desc = $query[0]["desc"];
-		$version = $query[0]["version"];
 		$online = $res["players"]["online"];
 		$max = $res["players"]["max"];
 		$logo = $res["favicon"];
