@@ -1,12 +1,17 @@
-# XworldCMS_modules
+# MC-Connector
 Установка:
+Из папки libs скопируете файлы в engine/libs/
+
 Скопируете содержимое билда в папку engine/modules/
 
-# Написание своих модулей
-1.Создайте папку с модулем в директории engine/modules/
-2.Для того чтобы cms определила ваш модуль требуется создать Main-class с названием index.php.
-3.Вы можете добавить информацию о модуле сохранив ее в массив. Пример:
+Сделайте sql запрос в базу
 
-$name[] = 'Module';
-$description[] = 'Description';
-$author[] = 'old.';
+```
+CREATE TABLE `x_servers` (
+  `id` int(10) NOT NULL,
+  `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(128) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'localhost',
+  `port` int(128) NOT NULL DEFAULT '25565',
+  `desc` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+```
